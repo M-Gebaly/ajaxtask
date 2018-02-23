@@ -74,11 +74,12 @@ public class UserServlet extends HttpServlet {
             String query = "SELECT * FROM LOGIN";
             PreparedStatement pre = conn.prepareStatement(query);
             rs = pre.executeQuery();
-            User user = new User();
+            
             while(rs.next()){
+                User user = new User();
                 user.setName(rs.getString("USERNAME"));
-                System.out.println(rs.getString("USERNAME"));
-                user.setName(rs.getString("PASSWORD"));
+                System.out.println(user.getName());
+                user.setPassword(rs.getString("PASSWORD"));
                 users.add(user);
             }
         } catch (SQLException ex) {

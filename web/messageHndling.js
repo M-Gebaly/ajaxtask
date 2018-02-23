@@ -22,7 +22,24 @@ $(document).ready(function () {
 });
 
 
-
+$( document ).ready(function() {
+         $.ajax({
+            type: 'POST', //servlet request type
+            contentType: 'application/json', //For input type //input data
+            dataType: 'json',
+            url: "UserServlet",
+            success: function (data) {
+                //var messageArray=JSON.parse(data);
+                var div = $("#users");
+                var d = "<table class=\"table\"><tr><th scope=\"col\">name</th></tr>";
+                for (var i = 0; i < data.length; i++) {
+                    d += "<tr><td scope=\"row\">" + data[i].name + "</td></tr>";
+                }
+                d += "</table>";
+                div.html(d);
+            }
+        });
+    });
 
 function myFunction() {
     setInterval(function () {
@@ -44,23 +61,5 @@ function myFunction() {
         });
     }, 1000);
     
-    setInterval(function () {
-        $.ajax({
-            type: 'POST', //servlet request type
-            contentType: 'application/json', //For input type //input data
-            dataType: 'json',
-            url: "UserServlet",
-            success: function (data) {
-                //var messageArray=JSON.parse(data);
-                var div = $("#users");
-                var d = "<table class=\"table\"><tr><th scope=\"col\">name</th></tr>";
-                for (var i = 0; i < data.length; i++) {
-                    d += "<tr><td scope=\"row\">" + data[i].name + "</td></tr>";
-                }
-                d += "</table>";
-                div.html(d);
-            }
-        });
-    }, 1000);
 }
 
