@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <form action="LoginServelt" method="POST">
+                        <div class="form-group">
+                            <label for="InputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="userEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="InputPassword1" placeholder="Password" name="userPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="col-sm">
+                    
+                </div>
+                <div class="col-sm">
+                    <form action="LoginServelt" method="GET">
+                        <div class="form-group">
+                            <label for="InputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="rEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="rEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="rPassword1" placeholder="Password" name="rPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary">SingUP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
