@@ -80,6 +80,7 @@ public class UserServlet extends HttpServlet {
                 user.setName(rs.getString("USERNAME"));
                 System.out.println(user.getName());
                 user.setPassword(rs.getString("PASSWORD"));
+                user.setStatus(rs.getString("status"));
                 users.add(user);
             }
         } catch (SQLException ex) {

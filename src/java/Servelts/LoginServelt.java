@@ -102,6 +102,10 @@ public class LoginServelt extends HttpServlet {
                 User user = new User();
                 user.setName(rs.getString("USERNAME"));
                 user.setPassword(rs.getString("PASSWORD"));
+//                String sql = "update LOGIN set statuse = 'online' WHERE lower(USERNAME)";
+//                PreparedStatement preq = conn.prepareStatement(sql);
+//                preq.setString(1, userName);
+//                preq.executeUpdate();
                 request.getSession().setAttribute("user", user);
                 request.getSession().setAttribute("userName", userName);
                 

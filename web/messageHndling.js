@@ -33,7 +33,12 @@ $( document ).ready(function() {
                 var div = $("#users");
                 var d = "<table class=\"table\"><tr><th scope=\"col\">name</th></tr>";
                 for (var i = 0; i < data.length; i++) {
-                    d += "<tr><td scope=\"row\">" + data[i].name + "</td></tr>";
+                    if(data[i].status == "online" ){
+                         d += "<tr><td scope=\"row\" class=\"table-success\">" + data[i].name + "</td></tr>";
+                    }else{
+                        d += "<tr><td scope=\"row\" class=\"table-danger\">" + data[i].name + "</td></tr>";
+                    }
+//                   d += "<tr><td scope=\"row\" class=\"table-danger\">" + data[i].name + "</td><td scope=\"row\" class=\"table-danger\">" + data[i].status + "</td></tr>";
                 }
                 d += "</table>";
                 div.html(d);
